@@ -29,7 +29,7 @@ print('#마지막 페이지:', last_page) #755
 import pandas as pd
 from io import StringIO
 df = pd.DataFrame()
-base_url = "https://finance.naver.com/item/sise_day.nhn?code=064400"
+base_url = "https://finance.naver.com/item/sise_day.nhn?code=000660"   # 하이닉스 000660 BY chunseok 수정, LG씨엔에스 064400
 for page in range(1, int(last_page)+1):
     url= f'{base_url}&page={page}'
     #print(url)
@@ -63,9 +63,20 @@ font_name = font_manager.FontProperties(fname=font_path).get_name()
 plt.rcParams["font.family"] = font_name
 plt.rcParams["axes.unicode_minus"] = False  # 마이너스 기호 깨짐 방지
 
-plt.title('LG씨엔에스 ( Git테스트3-민철짱이야? ㅋ)')
+plt.title('SK하이닉스')  # by chunseok 종목수정 LG씨엔에스에서 SK하이닉스
 plt.xticks(rotation=45)
 plt.plot(df['날짜'], df['종가'], 'ro-')
 plt.grid(color='gray', linestyle="--")
 
 plt.show()
+
+
+# <0> 종목코드조회
+# https://www.ktb.co.kr/trading/popup/itemPop.jspx
+
+# <1> 원하는 종목선택
+# https://finance.naver.com/item/sise_day.nhn?code=000660&page=1 #SK하이닉스
+# https://finance.naver.com/item/sise_day.nhn?code=005930&page=1 #삼성전자
+
+# <2> 태그추출 (우측마우스 -> 검사 -> Copy -> Copy Selector)
+# body > table.type2 > tbody > tr:nth-child(3) > td:nth-child(2) > span.tah p11
