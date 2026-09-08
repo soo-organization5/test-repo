@@ -64,7 +64,7 @@ plt.rcParams["font.family"] = font_name
 plt.rcParams["axes.unicode_minus"] = False  # 마이너스 기호 깨짐 방지
 
 
-plt.title('LG씨엔에스(by newbranch)')
+plt.title('LG씨엔에스(Git테스트3)')
 plt.xticks(rotation=45)
 plt.plot(df['날짜'], df['종가'], 'ro-')
 plt.grid(color='gray', linestyle="--")
