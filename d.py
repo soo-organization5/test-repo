@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-url = "https://finance.naver.com/item/sise_day.nhn?code=064400&page=1" #LG씨엔에스
+url = "https://finance.naver.com/item/sise_day.nhn?code=064400&page=1" # LG씨엔에스로 원복 사유: 속도때문
 response = requests.get(url, headers={'User-agent':'Mozilla/5.0'})
 source = response.text
 #print(source)
