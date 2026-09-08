@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-url = "https://finance.naver.com/item/sise_day.nhn?code=064400&page=1" # LG씨엔에스로 원복 사유: 속도때문
+url = "https://finance.naver.com/item/sise_day.nhn?code=064400&page=1" # LG씨엔에스
 response = requests.get(url, headers={'User-agent':'Mozilla/5.0'})
 source = response.text
 #print(source)
@@ -29,7 +29,7 @@ print('#마지막 페이지:', last_page) #755
 import pandas as pd
 from io import StringIO
 df = pd.DataFrame()
-base_url = "https://finance.naver.com/item/sise_day.nhn?code=000660"   # 하이닉스 000660 BY chunseok 수정, LG씨엔에스 064400
+base_url = "https://finance.naver.com/item/sise_day.nhn?code=064400"   #LG씨엔에스 064400
 for page in range(1, int(last_page)+1):
     url= f'{base_url}&page={page}'
     #print(url)
@@ -63,7 +63,7 @@ font_name = font_manager.FontProperties(fname=font_path).get_name()
 plt.rcParams["font.family"] = font_name
 plt.rcParams["axes.unicode_minus"] = False  # 마이너스 기호 깨짐 방지
 
-plt.title('SK하이닉스')  # by chunseok 종목수정 LG씨엔에스에서 SK하이닉스
+plt.title('LC씨엔에스(민철짱이야~~~~)')
 plt.xticks(rotation=45)
 plt.plot(df['날짜'], df['종가'], 'ro-')
 plt.grid(color='gray', linestyle="--")
