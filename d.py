@@ -63,7 +63,7 @@ font_name = font_manager.FontProperties(fname=font_path).get_name()
 plt.rcParams["font.family"] = font_name
 plt.rcParams["axes.unicode_minus"] = False  # 마이너스 기호 깨짐 방지
 
-plt.title('LC씨엔에스(민철짱이야~~~~)')
+plt.title('LC씨엔에스(민철짱이야)')
 plt.xticks(rotation=45)
 plt.plot(df['날짜'], df['종가'], 'ro-')
 plt.grid(color='gray', linestyle="--")
